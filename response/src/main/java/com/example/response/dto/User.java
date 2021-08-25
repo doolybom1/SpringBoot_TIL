@@ -1,10 +1,13 @@
 package com.example.response.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
+/* Naming Convention */
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
+@JsonInclude(JsonInclude.Include.NON_NULL) // null 값을 안보이게 처리
 public class User {
     private String name;
     private int age;
